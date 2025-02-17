@@ -23,19 +23,22 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
 ### Step 1: Spin up Ubuntu Server and SSH into the Server
 1. Go to your AWS Console and search for EC2 instance.
 2. Click **Launch Instance** → Give Instance a name → Select **Ubuntu** as the OS image → Select **t2.micro** as the instance type → Create a new key pair → Click **Launch Instance**.
-3. Open Git Bash and navigate to the directory where you saved your key pair:
+![Image](https://github.com/user-attachments/assets/c7117693-e161-4f38-8b04-319fae88128e)
+4. Open Git Bash and navigate to the directory where you saved your key pair:
    ```sh
    cd Downloads
    ```
-4. Change the permission mode of your key pair to enhance security:
+![Image](https://github.com/user-attachments/assets/38bd14b6-a0cd-4d3c-920e-a8ffaf3443b5)
+5. Change the permission mode of your key pair to enhance security:
    ```sh
    chmod 400 Devops.pem
    ```
-5. SSH into your instance:
+![Image](https://github.com/user-attachments/assets/a04c983a-a364-4102-9179-7a752661b8e6)
+6. SSH into your instance:
    ```sh
    ssh -i Devops.pem ubuntu@your_instance_public_ip
    ```
-
+![Image](https://github.com/user-attachments/assets/65a7b76c-ff72-4b23-ba81-6ceac4181f38)
 ### Step 2: Install Nginx
 1. Update your package lists:
    ```sh
@@ -45,18 +48,22 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    ```sh
    sudo apt install nginx
    ```
+![Image](https://github.com/user-attachments/assets/0abbee89-7fe6-4b20-9c18-a0303481ce33)
 3. Start and check Nginx status:
    ```sh
    sudo systemctl start nginx
    sudo systemctl status nginx
    ```
+![Image](https://github.com/user-attachments/assets/ad1de532-2063-4c07-a7ee-3ee7999ba045)
 4. Confirm Nginx is running by visiting `http://your_public_ip`.
+![Image](https://github.com/user-attachments/assets/45da7e83-4e8f-4065-bbe9-067eeb544636)
 
 ### Step 3: Install MySQL
 1. Install MySQL Server:
    ```sh
    sudo apt install mysql-server
    ```
+![Image](https://github.com/user-attachments/assets/13173c03-7eeb-4b43-a0bf-661da2883539)
 2. Secure MySQL installation:
    ```sh
    sudo mysql_secure_installation
@@ -65,16 +72,19 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    ```sh
    sudo mysql
    ```
+![Image](https://github.com/user-attachments/assets/4df5118c-68d2-4b55-b3b7-35c6f781caea)
 
 ### Step 4: Install PHP and its Dependencies
 1. Install PHP and required modules:
    ```sh
    sudo apt install php-fpm php-mysql
    ```
+![Image](https://github.com/user-attachments/assets/40414eb3-a7d9-456a-aaaf-eff2720d21a8)
 2. Check PHP version:
    ```sh
    php -v
    ```
+![Image](https://github.com/user-attachments/assets/139afc4b-3ce6-4e2f-ab75-80b4198f7b73)
 
 ### Step 5: Configure Nginx to Use PHP Processor
 1. Create a root web directory:
@@ -108,6 +118,7 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
        }
    }
    ```
+![Image](https://github.com/user-attachments/assets/4bb7aba9-69ac-45ac-85e3-6b029b6a999b)
 5. Enable configuration:
    ```sh
    sudo ln -s /etc/nginx/sites-available/projectLEMP /etc/nginx/sites-enabled/
@@ -134,6 +145,7 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    ```sh
    sudo vi index.html
    ```
+![Image](https://github.com/user-attachments/assets/71b7ff3c-493a-4407-886f-ca1ed1337925)
 4. Adjust permissions:
    ```sh
    sudo chown -R www-data:www-data /var/www/projectLEMP
@@ -155,8 +167,11 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    phpinfo();
    ?>
    ```
+![Image](https://github.com/user-attachments/assets/f2aaf157-0533-4804-b060-df9fe36616e4)
+
 3. Access the test file via `http://your_public_ip/info.php`.
-4. Remove the test file after verification:
+   ![Image](https://github.com/user-attachments/assets/8d341371-3542-4961-adca-d209243307b7)
+5. Remove the test file after verification:
    ```sh
    sudo rm /var/www/projectLEMP/info.php
    ```
@@ -165,6 +180,7 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
 1. Create a MySQL database:
    ```sh
    sudo mysql
+![Image](https://github.com/user-attachments/assets/b0f5f27f-1e1d-4bde-9145-d56305253557)
    CREATE DATABASE osita_database;
    ```
 2. Create a new MySQL user and grant privileges:
@@ -184,6 +200,7 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    ```sh
    SELECT * FROM osita_database.todo_list;
    ```
+![Image](https://github.com/user-attachments/assets/4123b9d9-ac97-44b9-b345-af56ba37bf68)
 
 ### Step 9: Create a PHP Script to Display Data
 1. Create a PHP file:
@@ -208,6 +225,9 @@ This project demonstrates the implementation of a LEMP stack (Linux, Nginx, MySQ
    }
    ?>
    ```
+![Image](https://github.com/user-attachments/assets/5aec8e1f-24bc-4483-a988-a5ebf09d37fb)
+
+![Image](https://github.com/user-attachments/assets/9be319b2-a659-4f49-941a-0fc61a580f63)
 
 ### Conclusion
 This project successfully implemented a LEMP stack to build a dynamic web application on AWS.
